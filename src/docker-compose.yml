@@ -1,0 +1,23 @@
+name: desafio-btg
+services:
+  queue:
+    image: rabbitmq
+    ports:
+     - 5672:5672
+  database:
+    build: ./database
+  api:
+    build: ./api
+    depends_on:
+      - database
+  worker:
+    build: ./worker
+    depends_on:
+      - database
+      - queue
+
+networks:
+  main:
+
+volumes:
+  database:

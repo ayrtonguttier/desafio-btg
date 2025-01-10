@@ -47,3 +47,10 @@ c. Lista de pedidos realizados por cliente
 [] Criar api em .NET - 3 horas
 [] Criar imagem docker para a API .NET - 1 hora
 [] Criar relatório técnico - 12 horas
+
+
+### Referencias
+
+[Tamanho do decimal em C#](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
+[Criando imagem do postgres](https://hub.docker.com/_/postgres)
+[Básico de filas com RabbitMQ](https://www.rabbitmq.com/docs/publishers#basics)

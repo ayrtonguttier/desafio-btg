@@ -49,9 +49,9 @@ c. Lista de pedidos realizados por cliente
 - [ ] Criar relatório técnico - 12 horas
 
 #### Comentários
-Criar imagem docker para RabbitMQ - Consumi menos tempo. Como não é algo que faço costumeiramente, estimei mais tempo do que foi necessário.
-Modelar base de dados relacional - Consumi menos tempo. O modelo está simplificado com apenas duas tabelas.
-Criar consumer da fila que insere no banco de dados - Consumi mais tempo do que o previsto. Não tenho muita experiência com RabbitMQ, então fiz o básico para funcionar.
+- Criar imagem docker para RabbitMQ - Consumi menos tempo. Como não é algo que faço costumeiramente, estimei mais tempo do que foi necessário.
+- Modelar base de dados relacional - Consumi menos tempo. O modelo está simplificado com apenas duas tabelas.
+- Criar consumer da fila que insere no banco de dados - Consumi mais tempo do que o previsto. Não tenho muita experiência com RabbitMQ, então fiz o básico para funcionar.
 
 
 

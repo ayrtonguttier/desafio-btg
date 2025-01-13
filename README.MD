@@ -54,3 +54,18 @@ c. Lista de pedidos realizados por cliente
 [Tamanho do decimal em C#](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
 [Criando imagem do postgres](https://hub.docker.com/_/postgres)
 [Básico de filas com RabbitMQ](https://www.rabbitmq.com/docs/publishers#basics)
+
+
+
+
+https://www.connectionstrings.com/postgresql/
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-9.0&tabs=visual-studio
+https://www.rabbitmq.com/docs/queues
+https://www.rabbitmq.com/docs/download
+https://github.com/amantinband/error-or?tab=readme-ov-file#thenasync
+https://dotnetdocs.ir/Post/43/implementing-rabbitmq-in-net-core
+https://hub.docker.com/_/postgres
+
+
+
+

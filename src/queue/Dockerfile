@@ -1,0 +1,7 @@
+FROM rabbitmq:4.0-management
+ENV RABBITMQ_DEFAULT_USER=superuser
+ENV RABBITMQ_DEFAULT_PASS=supersenha
+EXPOSE 5672:5672
+EXPOSE 15672:15672
+
+CMD [ "rabbitmq-server" ]

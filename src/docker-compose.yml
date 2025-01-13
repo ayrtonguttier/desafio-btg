@@ -1,17 +1,23 @@
 name: desafio-btg
 services:
   queue:
-    image: rabbitmq
+    build: ./queue
     ports:
      - 5672:5672
+     - 15672:15672
   database:
     build: ./database
+    ports:
+      - 5432:5432
+    volumes:
+      - database:/var/lib/postgresql/data
   api:
     build: ./api
     depends_on:
       - database
   worker:
     build: ./worker
+    restart: on-failure
     depends_on:
       - database
       - queue

@@ -2,11 +2,11 @@
 
 ## O pedido
 
-
 Crie um micro serviço que consuma dados de uma fila RabbitMQ e grave os dados para conseguir listar as informações:
-a. Valor total do pedido
-b. Quantidade de Pedidos por Cliente
-c. Lista de pedidos realizados por cliente
+
+- Valor total do pedido
+- Quantidade de Pedidos por Cliente
+- Lista de pedidos realizados por cliente
 
 ``` json
 {
@@ -29,15 +29,16 @@ c. Lista de pedidos realizados por cliente
 
 
 Crie uma API REST, em que permita o consultar as seguintes informações:
-a. Valor total do pedido
-b. Quantidade de Pedidos por Cliente
-c. Lista de pedidos realizados por cliente
+
+- Valor total do pedido
+- Quantidade de Pedidos por Cliente
+- Lista de pedidos realizados por cliente
 
 ## Docs
 
-[Fila](./src/queue/queue.md)
-[Database](./src/database/database.md)
-[Worker](./src/worker/worker.md)
+- [Fila](./src/queue/queue.md)
+- [Database](./src/database/database.md)
+- [Worker](./src/worker/worker.md)
 
 ## Planejamento
 
@@ -60,25 +61,35 @@ c. Lista de pedidos realizados por cliente
 - Criar consumer da fila que insere no banco de dados - Consumi mais tempo do que o previsto. Não tenho muita experiência com RabbitMQ, então fiz o básico para funcionar.
 
 
+## Stack de desenvolvimento
+
+- Docker version 27.4.1, build b9d17ea
+- Dotnet version 8.0.110
+- Ubuntu 24.04.1 LTS
+- NVIM v0.10.2
+- VS Code 1.96.2
+- git version 2.43.0
 
 
-### Referencias
+
+## Referencias
 
 [Tamanho do decimal em C#](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
+
 [Criando imagem do postgres](https://hub.docker.com/_/postgres)
+
 [Básico de filas com RabbitMQ](https://www.rabbitmq.com/docs/publishers#basics)
 
-
-
-
 https://www.connectionstrings.com/postgresql/
+
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-9.0&tabs=visual-studio
+
 https://www.rabbitmq.com/docs/queues
+
 https://www.rabbitmq.com/docs/download
+
 https://github.com/amantinband/error-or?tab=readme-ov-file#thenasync
+
 https://dotnetdocs.ir/Post/43/implementing-rabbitmq-in-net-core
+
 https://hub.docker.com/_/postgres
-
-
-
-

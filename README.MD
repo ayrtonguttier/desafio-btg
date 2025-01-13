@@ -33,6 +33,12 @@ a. Valor total do pedido
 b. Quantidade de Pedidos por Cliente
 c. Lista de pedidos realizados por cliente
 
+## Docs
+
+[Fila](./src/queue/queue.md)
+[Database](./src/database/database.md)
+[Worker](./src/worker/worker.md)
+
 ## Planejamento
 
 

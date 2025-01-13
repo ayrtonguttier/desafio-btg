@@ -38,15 +38,15 @@ c. Lista de pedidos realizados por cliente
 
 ### Atividades
 
-[x] Criar imagem docker para RabbitMQ - 1 horas
-[x] Modelar base de dados relacional - 3 horas
-  [x] Criar scripts de criação da base de dados - 3 horas
-  [x] Criar imagem docker para PostgresSQL - 1 hora
-[x] Criar consumer da fila que insere no banco de dados - 3 horas
-[x] Criar imagem docker para o consumer da fila - 1 hora
-[] Criar api em .NET - 3 horas
-[] Criar imagem docker para a API .NET - 1 hora
-[] Criar relatório técnico - 12 horas
+- [x] Criar imagem docker para RabbitMQ - 1 horas
+- [x] Modelar base de dados relacional - 3 horas
+- [x] Criar scripts de criação da base de dados - 3 horas
+- [x] Criar imagem docker para PostgresSQL - 1 hora
+- [x] Criar consumer da fila que insere no banco de dados - 3 horas
+- [x] Criar imagem docker para o consumer da fila - 1 hora
+- [ ] Criar api em .NET - 3 horas
+- [ ] Criar imagem docker para a API .NET - 1 hora
+- [ ] Criar relatório técnico - 12 horas
 
 #### Comentários
 Criar imagem docker para RabbitMQ - Consumi menos tempo. Como não é algo que faço costumeiramente, estimei mais tempo do que foi necessário.

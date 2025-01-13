@@ -5,22 +5,32 @@ services:
     ports:
      - 5672:5672
      - 15672:15672
+    networks:
+     - main
   database:
     build: ./database
     ports:
       - 5432:5432
     volumes:
       - database:/var/lib/postgresql/data
+    networks:
+     - main
   api:
     build: ./api
     depends_on:
       - database
+    networks:
+     - main
+    ports:
+     - 5116:8080
   worker:
     build: ./worker
     restart: on-failure
     depends_on:
       - database
       - queue
+    networks:
+     - main
 
 networks:
   main:

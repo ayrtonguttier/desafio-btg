@@ -36,9 +36,9 @@ Crie uma API REST, em que permita o consultar as seguintes informações:
 
 ## Docs
 
-- [Fila](./src/queue/queue.md)
-- [Database](./src/database/database.md)
-- [Worker](./src/worker/worker.md)
+- [Fila](./src/queue/readme.md)
+- [Database](./src/database/readme.md)
+- [Worker](./src/worker/readme.md)
 
 ## Planejamento
 

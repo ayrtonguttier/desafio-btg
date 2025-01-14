@@ -69,6 +69,8 @@ Crie uma API REST, em que permita o consultar as seguintes informações:
 - NVIM v0.10.2
 - VS Code 1.96.2
 - git version 2.43.0
+- beekeeper
+- insomnia
 
 
 

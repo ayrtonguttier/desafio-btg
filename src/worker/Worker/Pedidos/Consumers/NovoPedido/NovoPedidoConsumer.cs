@@ -38,10 +38,10 @@ public class NovoPedidoConsumer : BackgroundService
       await channel.QueueDeclareAsync(queue: _queue, durable: false, exclusive: false, autoDelete: false, arguments: null, cancellationToken: stoppingToken);
       var consumer = new AsyncEventingBasicConsumer(channel);
       consumer.ReceivedAsync += ConsumeMessageAsync;
+      await channel.BasicConsumeAsync(_queue, false, consumer, stoppingToken);
 
       while (!stoppingToken.IsCancellationRequested)
       {
-        await channel.BasicConsumeAsync(_queue, false, consumer, stoppingToken);
       }
     }
     catch (Exception)

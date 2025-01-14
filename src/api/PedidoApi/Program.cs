@@ -15,6 +15,7 @@ builder.Services.AddSingleton<IDbConnectionFactory, PostgresConnectionFactory>()
 builder.Services.AddScoped<IValorTotalDoPedidoQuery, PedidoRepository>();
 builder.Services.AddScoped<IPedidosPorClienteQuery, PedidoRepository>();
 builder.Services.AddScoped<IQuantidadeDePedidosPorClienteQuery, PedidoRepository>();
+builder.Services.AddScoped<IClientesQueFizeramPedidosQuery, PedidoRepository>();
 
 var app = builder.Build();
 
@@ -52,6 +53,13 @@ app.MapGet("/cliente/{codigoCliente}/pedidos/quantidade", async ([FromServices] 
 .WithName("Quantidade de pedidos por cliente")
 .WithOpenApi();
 
+app.MapGet("/cliente", async ([FromServices] IClientesQueFizeramPedidosQuery query) =>
+{
+    var result = await query.GetClientesQueFizeramPedidosAsync();
+    return result.Match(item => Results.Ok(item), errors => Results.Problem(MapErrors(errors)));
+})
+.WithName("Clientes que fizeram pedidos")
+.WithOpenApi();
 
 ProblemDetails MapErrors(List<Error> errors)
 {

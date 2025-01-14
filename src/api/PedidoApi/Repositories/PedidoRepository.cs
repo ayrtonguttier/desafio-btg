@@ -21,9 +21,10 @@ public class PedidoRepository : IPedidoRepository
   {
     try
     {
+      Console.WriteLine("Consultando {0}", codigoCliente);
       using var connection = _dbConnectionFactory.CreateConnection();
       var queryString = "select * from pedido where codigoCliente = @codigoCliente";
-      var result = await connection.QueryAsync<PedidoResult>(queryString, codigoCliente);
+      var result = await connection.QueryAsync<PedidoResult>(queryString, new { codigoCliente });
       if (!result.Any())
       {
         return Error.NotFound("Pedido.NaoEncontrado", "Não foram encontrados pedidos para este cliente");
@@ -75,7 +76,7 @@ public class PedidoRepository : IPedidoRepository
 
       if (!result.Any())
       {
-        return Error.NotFound("Pedidos.NaoEncontrado","Não foram encontrados pedidos para este cliente");
+        return Error.NotFound("Pedidos.NaoEncontrado", "Não foram encontrados pedidos para este cliente");
       }
 
       return new QuantidadeDePedidosPorClienteResult(codigoCliente, result.Single());
@@ -98,5 +99,27 @@ public class PedidoRepository : IPedidoRepository
     }
 
     return new ValorTotalDoPedidoResult(codigoPedido, result.Value);
+  }
+
+  public async Task<ErrorOr<IReadOnlyCollection<ClienteQueFezPedidoResult>>> GetClientesQueFizeramPedidosAsync()
+  {
+    try
+    {
+      using var connection = _dbConnectionFactory.CreateConnection();
+      var queryString = "select distinct codigoCliente from pedido;";
+      var result = await connection.QueryAsync<int>(queryString);
+
+      if (!result.Any())
+      {
+        return Error.NotFound("Pedido.NaoEncontrado", "Não foram encontrados clientes que fizeram pedidos");
+      }
+
+      return result.Select(x => new ClienteQueFezPedidoResult(x)).ToList();
+    }
+    catch (Exception ex)
+    {
+      _logger.LogError(ex, "Erro ao consultar clientes que fizeram pedidos");
+      return Error.Failure("Pedido.FalharAoConsultarClientes", "Não foi possível encontrar os clientes, tente novamente mais tarde");
+    }
   }
 }

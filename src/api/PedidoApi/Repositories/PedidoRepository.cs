@@ -26,7 +26,7 @@ public class PedidoRepository : IPedidoRepository
       var result = await connection.QueryAsync<PedidoResult>(queryString, codigoCliente);
       if (!result.Any())
       {
-        return Error.NotFound();
+        return Error.NotFound("Pedido.NaoEncontrado", "Não foram encontrados pedidos para este cliente");
       }
 
       var pedidos = result.ToList();
@@ -75,7 +75,7 @@ public class PedidoRepository : IPedidoRepository
 
       if (!result.Any())
       {
-        return Error.NotFound();
+        return Error.NotFound("Pedidos.NaoEncontrado","Não foram encontrados pedidos para este cliente");
       }
 
       return new QuantidadeDePedidosPorClienteResult(codigoCliente, result.Single());
@@ -94,7 +94,7 @@ public class PedidoRepository : IPedidoRepository
     var result = await connection.QuerySingleAsync<decimal?>(queryString, new { codigoPedido });
     if (result is null)
     {
-      return Error.NotFound();
+      return Error.NotFound("Pedido.NaoEncontrado", "Não foram encontrados itens para este pedido");
     }
 
     return new ValorTotalDoPedidoResult(codigoPedido, result.Value);

@@ -35,8 +35,6 @@ public class PedidoRepository : IPedidoRepository
                 transaction.Rollback();
                 return itensResult.Errors;
             }
-
-            _logger.LogInformation("Commit");
             transaction.Commit();
             return Result.Created;
         }
@@ -52,7 +50,6 @@ public class PedidoRepository : IPedidoRepository
         var errors = new List<Error>();
         foreach (var item in itens)
         {
-            _logger.LogInformation("Registrando item do pedido");
             try
             {
                 await connection.ExecuteAsync(insertItemPedidoSql, new { codigoPedido = idPedido, produto = item.Produto, quantidade = item.Quantidade, preco = item.Preco });
@@ -76,7 +73,6 @@ public class PedidoRepository : IPedidoRepository
     {
         try
         {
-            _logger.LogInformation("Registrando novo pedido");
             var insertPedidoSql = "insert into pedido (codigoPedido, codigoCliente) values (@codigoPedido, @codigoCliente) returning codigoPedido";
             var result = await connection.QuerySingleAsync<int>(insertPedidoSql, new { codigoPedido = pedido.CodigoPedido, codigoCliente = pedido.CodigoCliente }, transaction);
             return result;

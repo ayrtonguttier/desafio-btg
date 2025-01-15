@@ -49,7 +49,6 @@ public class NovoPedidoConsumer : BackgroundService
 
   private async Task ConsumeMessageAsync(object ch, BasicDeliverEventArgs ea)
   {
-    _logger.LogInformation("ConsumeMessage");
     try
     {
       var body = ea.Body.ToArray();

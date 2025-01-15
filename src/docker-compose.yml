@@ -31,6 +31,14 @@ services:
       - queue
     networks:
      - main
+  mocker:
+    build: ./dummy-publisher
+    restart: on-failure
+    depends_on: 
+      - queue
+    networks:
+      - main
+
 
 networks:
   main:

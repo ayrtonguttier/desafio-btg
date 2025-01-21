@@ -1,5 +1,3 @@
-# Processo seletivo BTG - Ayrton Guttier
-
 ## O pedido
 
 Crie um micro serviço que consuma dados de uma fila RabbitMQ e grave os dados para conseguir listar as informações:
